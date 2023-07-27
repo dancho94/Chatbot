@@ -1,0 +1,63 @@
+{"intents" : 
+[
+    {
+        "tag" : "saludo",
+        "patterns" : ["Hola", "Que tal", "Como estas", "Hay alguien ahí", "Hey","Buen dia"],
+        "responses" : ["Hola, gracias por preguntar", "Que bueno verte de nuevo por aquí", "Hola, En que te puedo ayudar?", "Hola ¿Como amaneciste hoy?", "¿Como va tu dia?"],
+        "context" : ""
+    },
+    {
+        "tag" : "Despedida",
+        "patterns" :["Adios", "Nos vemos luego", "Chao", "un placer chatear contigo, chao", "Me tengo que ir, adios"],
+        "responses" : ["Nos vemos", "Que tengas un buen día", "Adiós, vuelve pronto", "Adiós, espero te haya servido mi ayuda"],
+        "context": ""
+    },
+    {
+        "tag" : "Gracias",
+        "patterns" : ["Gracias", "Muchisimas gracias", "Gracias por tu ayuda"],
+        "responses" : ["Estoy feliz de ayudarte", "Un placer", "Me alegra ayudarte"],
+        "context" : ""
+    },
+    {
+        "tag" : "noanswer",
+        "patterns" : [],
+        "responses" : ["Perdón, no te entiendo", "Por favor me puedes brindar más información", "No estoy seguro de entenderte"],
+        "context" : ""
+    },
+    {
+        "tag" : "conversations",
+        "patterns" : ["¿Cómo puedo manejar el estrés?","Tengo estres", "Ayudame estoy estresado/a"],
+        "responses" : ["El manejo del estrés puede ser desafiante, pero algunas técnicas útiles incluyen la meditación, el ejercicio y hablar con alguien de confianza sobre tus preocupaciones."],
+        "context" :""
+    },
+    {
+        "tag" : "conversations",
+        "patterns" : ["Me siento triste todo el tiempo, ¿qué puedo hacer?", "Me siento triste", "Amanecí desanimado"],
+        "responses" : ["Es importante que no te sientas solo/a en esto. Hablar con amigos, familiares o un profesional de la salud mental puede ser de gran ayuda para entender tus emociones y encontrar apoyo."],
+        "context" : ""
+    },
+    {
+        "tag" : "conversations",
+        "context" : ["¿Qué puedo hacer para mejorar mi autoestima?", "me siento mal conmigo misma/o"],
+        "patterns" : ["Trabajar en el autocuidado y valorarse a uno mismo es fundamental para mejorar la autoestima. Encuentra actividades que te hagan sentir bien contigo mismo/a y recuerda que todos tenemos cualidades únicas y valiosas."],
+        "responses" : ""
+    },
+    {
+        "tag" : "conversations",
+        "patterns" : ["¿Cómo puedo superar el miedo al fracaso?"],
+        "responses" : ["El miedo al fracaso es común, pero recuerda que cada error es una oportunidad para aprender y crecer. Define metas realistas y celebra tus logros, independientemente de su magnitud."],
+        "context" : ""
+    },
+    {
+        "tag" : "conversations",
+        "patterns" : ["Me siento abrumado/a con mis responsabilidades, ¿qué puedo hacer?"],
+        "responses" : ["Cuando te sientas abrumado/a, es útil dividir tus responsabilidades en tareas más pequeñas y abordarlas una por una. También puedes pedir ayuda a amigos o familiares para aliviar la carga."],
+        "context" : ""
+    },
+    {
+        "tag" : "conversations",
+        "patterns" : ["¿Cómo puedo lidiar con la ansiedad social?"],
+        "responses" : ["Lidiar con la ansiedad social puede ser difícil, pero practicar la exposición gradual y desafiar pensamientos negativos puede ayudar. También es útil recordar que todos cometemos errores y nadie es perfecto."],
+        "context" : ""
+    }
+]}
