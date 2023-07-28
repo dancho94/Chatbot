@@ -8,9 +8,13 @@ import json
 import pickle
 
 import numpy as np
-from tensorflow.keras import Sequential
-from tensorflow.keras.layers import Conv2D, Flatten, Dense, Dropout
-from tensorflow.keras.optimizers import SGD
+import tensorflow as tf
+tf.keras.backend.clear_session() #reseteo sencillo
+import keras
+from keras import Sequential
+from keras.layers import Conv2D, Flatten, Dense, Dropout
+from keras.optimizers import SGD
+
 import random
 
 lemmatizer = WordNetLemmatizer()
@@ -68,33 +72,32 @@ for doc in documents:
 
     training.append([bag, output_row])
 
-    #shuffle our features and turn into np.array
-    random.shuffle(training)
-    training = np.array(training)
+#shuffle our features and turn into np.array
+random.shuffle(training)
+training = np.array(training)
 
-    #create train and test list. x-patterns, y-intents
-    train_x = list(training[:,0])
-    train_y = list(training[:,1])
+#create train and test list. x-patterns, y-intents
+train_x = list(training[:,0])
+train_y = list(training[:,1])
 
+#create model-3 laters. first layer 128 neurons, second layer 64neurons and 3rd output layer contains number of neurons
+#equal to number of intentes to predict output intent with softmax
 
-    #create model-3 laters. first layer 128 neurons, second layer 64neurons and 3rd output layer contains number of neurons
-    #equal to number of intentes to predict output intent with softmax
+model = Sequential()
+model.add(Dense(128, input_shape=(len(train_x[0]),), activation='relu'))
+model.add(Dropout(0.5))
+model.add(Dense(68, activation='relu'))
+model.add(Dropout(0.5))
+model.add(Dense(len(train_y[0]), activation='softmax'))
 
-    model = Sequential()
-    model.add(Dense(128, input_shape=(len(train_x[0]),), activation='relu'))
-    model.add(Dropout(0.5))
-    model.add(Dense(68, activation='relu'))
-    model.add(Dropout(0.5))
-    model.add(Dense(len(train_y[0]), activation='softmax'))
+# Compile model. Stochastic gradient descent with Nesterov accelerated gradient gives good results for this model
 
-    # Compile model. Stochastic gradient descent with Nesterov accelerated gradient gives good results for this model
+sgd = SGD(lr=0.01, decay=1e-6, momentum=0.9, nesterov=True)
+model.compile(loss='categorical_crossentropy', optimizer=sgd, metrics=['accuracy'])
 
-    sgd = SGD(lr=0.01, decay=1e-6, momentum=0.9, nesterov=True)
-    model.compile(loss='categorical_crossentropy', optimizer=sgd, metrics=['accuracy'])
+#fitting and saving model 
 
-    #fitting and saving model 
+hist = model.fit(np.array(train_x), np.array(train_y), epochs=300, batch_size=5, verbose=1)
+model.save('chatbot_model.h5', hist)
 
-    hist = model.fit(np.array(train_x), np.array(train_y), epochs=300, batch_size=5, verbose=1)
-    model.save('chatbot_model.h5', hist)
-
-    print('Model create')
+print('Model create')

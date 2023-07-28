@@ -2,22 +2,52 @@
 [
     {
         "tag" : "saludo",
-        "patterns" : ["Hola", "Que tal", "Como estas", "Hay alguien ahí", "Hey","Buen dia"],
-        "responses" : ["Hola, gracias por preguntar", "Que bueno verte de nuevo por aquí", "Hola, En que te puedo ayudar?", "Hola ¿Como amaneciste hoy?", "¿Como va tu dia?"],
+        "patterns" : ["Hola", "¡Hola!", "¿Cómo estás?", "Saludos", "¡Buen día!", "Buenos días", "Buenas tardes"],
+        "responses" : ["¡Hola!", "¡Hola! ¿En qué puedo ayudarte?", "Hola, ¿cómo estás?", "Hola, ¡bienvenido!", "¡Buen día!", "¡Buenos días!", "¡Buenas tardes!"],
         "context" : ""
     },
     {
-        "tag" : "Despedida",
-        "patterns" :["Adios", "Nos vemos luego", "Chao", "un placer chatear contigo, chao", "Me tengo que ir, adios"],
-        "responses" : ["Nos vemos", "Que tengas un buen día", "Adiós, vuelve pronto", "Adiós, espero te haya servido mi ayuda"],
-        "context": ""
+        "tag": "despedida",
+        "patterns": ["Adiós", "Hasta luego", "Nos vemos", "Chao"],
+        "responses": ["Hasta luego.", "¡Adiós! Espero verte pronto.", "Nos vemos.", "¡Chao!", "Que tengas un buen día.", "Hasta pronto."],
+        "context": [""]
     },
     {
-        "tag" : "Gracias",
-        "patterns" : ["Gracias", "Muchisimas gracias", "Gracias por tu ayuda"],
-        "responses" : ["Estoy feliz de ayudarte", "Un placer", "Me alegra ayudarte"],
-        "context" : ""
+      "tag": "pregunta_estado",
+      "patterns": ["¿Cómo estás?", "¿Qué tal?", "¿Cómo va todo?", "¿Estás bien?"],
+      "responses": ["Estoy bien, gracias por preguntar.", "Todo va bien, gracias.", "Me siento bien, ¿y tú?", "Estoy bien, ¿en qué puedo ayudarte?",  "Todo bien por aquí, ¿cómo estás tú?"],
+      "context": ""
     },
+    {   
+      "tag": "pregunta_nombre",
+      "patterns": ["¿Cuál es tu nombre?", "¿Cómo te llamas?", "¿Tienes un nombre?", "Dime tu nombre"],
+      "responses": ["Soy un chatbot de ejemplo.", "Puedes llamarme ChatBot.", "Mi nombre es ChatBot.", "Me llaman ChatBot.", "Soy el asistente virtual ChatBot."],
+      "context": [""]
+    },
+    {
+        "tag": "pregunta_edad",
+        "patterns": ["¿Cuántos años tienes?", "¿Cuándo naciste?", "¿Qué edad tienes?"],
+        "responses": ["Soy un programa de computadora, así que no tengo una edad real.", "Como soy un chatbot, no envejezco.", "No tengo edad, ya que soy solo un bot.", "Nací en el código, así que no tengo una edad física."],
+        "context": [""]
+    },
+    {
+        "tag": "pregunta_ayuda",
+        "patterns": ["¿Puedes ayudarme?", "Necesito ayuda", "No sé qué hacer", "¿Qué me recomiendas?"],
+        "responses": ["Claro, estaré encantado de ayudarte.", "Por supuesto, ¿en qué puedo asistirte?", "Estoy aquí para ayudarte en lo que necesites.", "Cuenta conmigo para brindarte asesoramiento.", "Con gusto te daré cualquier información que necesites."],
+        "context": [""]
+    },
+    {
+        "tag": "pregunta_tiempo",
+        "patterns": ["¿Qué hora es?", "¿Cómo está el clima?", "¿Cuál es la temperatura?", "¿Va a llover hoy?"],
+        "responses": ["Lo siento, no puedo proporcionar información en tiempo real.", "No tengo acceso a datos en tiempo real sobre el clima.", "Te recomiendo que verifiques una aplicación de clima para obtener esa información.", "No puedo brindar información actualizada sobre el tiempo.", "Mi función principal es brindar asistencia y responder preguntas generales."],
+        "context": [""]
+    },
+    {
+        "tag": "agradecimiento",
+        "patterns": ["Gracias", "¡Gracias!", "Muchas gracias", "Agradecido"],
+        "responses": ["De nada.", "No hay de qué.", "Estoy aquí para ayudarte.", "Es un placer ayudarte.", "¡Gracias a ti por utilizar el chatbot!", "Siempre estoy aquí para asistirte."],
+        "context": [""]
+      },
     {
         "tag" : "noanswer",
         "patterns" : [],
@@ -25,39 +55,117 @@
         "context" : ""
     },
     {
-        "tag" : "conversations",
-        "patterns" : ["¿Cómo puedo manejar el estrés?","Tengo estres", "Ayudame estoy estresado/a"],
-        "responses" : ["El manejo del estrés puede ser desafiante, pero algunas técnicas útiles incluyen la meditación, el ejercicio y hablar con alguien de confianza sobre tus preocupaciones."],
-        "context" :""
-    },
-    {
-        "tag" : "conversations",
-        "patterns" : ["Me siento triste todo el tiempo, ¿qué puedo hacer?", "Me siento triste", "Amanecí desanimado"],
-        "responses" : ["Es importante que no te sientas solo/a en esto. Hablar con amigos, familiares o un profesional de la salud mental puede ser de gran ayuda para entender tus emociones y encontrar apoyo."],
+        "tag": "pregunta_programador",
+        "patterns": ["¿Quién fue tu programador?", "¿Quién te creó?", "¿Quién te diseñó?", "¿Cuál es tu creador?"],
+        "responses": ["Fui creado por Danilo", "Mi programador es Danilo", "Fui diseñado po Danilo", "Soy el resultado del trabajo un programador"],
+        "context": [""]
+      },
+      {
+        "tag": "consejos_animar",
+        "patterns": ["Me siento triste", "Necesito ánimo", "Estoy deprimido", "Me siento desanimado"],
+        "responses": ["Recuerda que los momentos difíciles son temporales, busca el lado positivo.", "Haz una lista de cosas por las que estés agradecido, eso te ayudará a ver lo bueno en tu vida.", "Practica actividades que te gusten y te hagan sentir bien.", "Habla con alguien en quien confíes sobre cómo te sientes.", "Realiza ejercicios de respiración para relajarte en momentos de tensión.", "Escucha música que te alegre y motive.", "Busca ayuda profesional si sientes que necesitas hablar con alguien sobre lo que estás pasando."],
+        "context": [""]
+      },
+      {
+        "tag": "afirmaciones_positivas",
+        "patterns": ["Necesito motivación", "Dime una afirmación positiva", "Afirmación para el día"],
+        "responses": ["Eres fuerte y capaz de superar cualquier desafío que se te presente.", "Cada día eres mejor versión de ti mismo.", "Tus esfuerzos dan frutos y te acercan a tus metas.", "Aceptas tus errores y aprendes de ellos, eso te hace crecer.", "Tienes el poder de elegir pensamientos positivos y atraer buenas experiencias.", "Eres valioso y mereces amor y felicidad.", "Cada día es una oportunidad para aprender, crecer y mejorar.", "Tus imperfecciones te hacen humano y único, ámate tal como eres."],
+        "context": [""]
+      },
+      {
+        "tag": "mensaje_apoyo",
+        "patterns": ["Necesito apoyo", "Estoy pasando por un momento difícil", "No sé cómo seguir adelante"],
+        "responses": ["Estoy aquí para escucharte y apoyarte en todo lo que necesites.", "Recuerda que no estás solo, siempre habrá personas dispuestas a ayudarte.", "Permítete sentir lo que sientes, es normal tener altibajos emocionales.", "No te rindas, eres capaz de superar cualquier adversidad.", "Toma un momento para cuidarte y darte el cariño que mereces.", "Enfócate en el presente y en las pequeñas cosas que te hacen feliz.", "La vida está llena de altos y bajos, pero siempre hay luz al final del túnel.", "Sé amable contigo mismo y date tiempo para sanar y crecer."],
+        "context": [""]
+      },
+      {
+        "tag": "autoaceptacion",
+        "patterns": ["No me siento bien conmigo mismo", "No me acepto como soy", "Quiero mejorar pero no sé cómo"],
+        "responses": ["Aprende a amarte a ti mismo tal como eres, eres único y especial.", "Nadie es perfecto, todos tenemos nuestras fortalezas y debilidades.", "La autoaceptación es un proceso gradual, date tiempo para crecer y mejorar.", "Identifica tus logros y reconoce lo que haces bien.", "No te compares con los demás, cada persona tiene su propio camino y tiempo.", "Practica la autocompasión y sé amable contigo mismo en momentos difíciles.", "Enfócate en tus cualidades positivas y trabaja en mejorar aquellas áreas que desees cambiar.", "Recuerda que mereces amor y respeto, incluyendo el amor propio."],
+        "context": [""]
+      },
+      {
+        "tag": "reduccion_estres",
+        "patterns": ["Estoy muy estresado", "Necesito calma", "¿Cómo puedo reducir el estrés?"],
+        "responses": ["Encuentra tiempo para practicar la relajación y la meditación.", "Realiza ejercicios de respiración profunda para calmarte en momentos de tensión.", "Haz una pausa y realiza actividades que te ayuden a liberar el estrés, como caminar, leer o hacer manualidades.", "Establece límites claros y aprende a decir 'no' cuando te sientas abrumado.", "Dedica tiempo para hacer cosas que te gusten y te hagan sentir bien.", "Considera la posibilidad de hacer ejercicio regularmente, ya que puede ayudar a reducir el estrés.", "Habla con alguien en quien confíes sobre lo que estás experimentando, compartir tus preocupaciones puede ayudarte a sentirte más aliviado.", "Evita la sobreexigencia, date permiso para descansar y cuidarte."],
+        "context": [""]
+      },
+      {
+        "tag": "pensamiento_positivo",
+        "patterns": ["Siempre soy negativo", "Necesito cambiar mi forma de pensar", "¿Cómo puedo ser más positivo?"],
+        "responses": ["Sé consciente de tus pensamientos y trata de identificar aquellos patrones negativos.", "Cambia los pensamientos negativos por afirmaciones positivas y realistas.", "Practica la gratitud, toma un momento cada día para reconocer lo que aprecias en tu vida.", "Rodeate de personas positivas y que te inspiren.", "Fomenta un entorno positivo a tu alrededor, decorando tu espacio con cosas que te hagan feliz.", "Visualiza tus metas y sueños, esto te ayudará a mantener una actitud positiva hacia el futuro.", "No te exijas demasiado, permite cometer errores y aprender de ellos.", "Celebra tus logros, por pequeños que sean, cada paso cuenta hacia un cambio positivo."],
         "context" : ""
-    },
-    {
-        "tag" : "conversations",
-        "context" : ["¿Qué puedo hacer para mejorar mi autoestima?", "me siento mal conmigo misma/o"],
-        "patterns" : ["Trabajar en el autocuidado y valorarse a uno mismo es fundamental para mejorar la autoestima. Encuentra actividades que te hagan sentir bien contigo mismo/a y recuerda que todos tenemos cualidades únicas y valiosas."],
-        "responses" : ""
-    },
-    {
-        "tag" : "conversations",
-        "patterns" : ["¿Cómo puedo superar el miedo al fracaso?"],
-        "responses" : ["El miedo al fracaso es común, pero recuerda que cada error es una oportunidad para aprender y crecer. Define metas realistas y celebra tus logros, independientemente de su magnitud."],
-        "context" : ""
-    },
-    {
-        "tag" : "conversations",
-        "patterns" : ["Me siento abrumado/a con mis responsabilidades, ¿qué puedo hacer?"],
-        "responses" : ["Cuando te sientas abrumado/a, es útil dividir tus responsabilidades en tareas más pequeñas y abordarlas una por una. También puedes pedir ayuda a amigos o familiares para aliviar la carga."],
-        "context" : ""
-    },
-    {
-        "tag" : "conversations",
-        "patterns" : ["¿Cómo puedo lidiar con la ansiedad social?"],
-        "responses" : ["Lidiar con la ansiedad social puede ser difícil, pero practicar la exposición gradual y desafiar pensamientos negativos puede ayudar. También es útil recordar que todos cometemos errores y nadie es perfecto."],
-        "context" : ""
-    }
+      },
+      {
+        "tag": "busqueda_sentido",
+        "patterns": ["Siento que mi vida carece de sentido", "Necesito encontrar mi propósito", "¿Cómo puedo darle sentido a mi vida?"],
+        "responses": ["Reflexiona sobre tus valores y lo que es significativo para ti.", "Haz una lista de tus pasiones e intereses, esto puede ayudarte a encontrar un propósito.", "Ayudar a los demás puede brindar un sentido de propósito y satisfacción.", "Considera la posibilidad de establecer metas que estén alineadas con tus valores y aspiraciones.", "Encuentra actividades que te hagan sentir realizado y te den un sentido de logro.", "Aprende algo nuevo, el aprendizaje continuo puede darle un sentido de crecimiento personal.", "No te sientas presionado a encontrar un propósito de inmediato, a veces lleva tiempo, sé paciente contigo mismo.", "Habla con amigos, familiares o un profesional sobre tus inquietudes, a veces compartir tus pensamientos puede ayudarte a encontrar claridad."],
+        "context": [""]
+      },
+      {
+        "tag": "autocuidado",
+        "patterns": ["Me siento agotado", "Necesito cuidarme mejor", "¿Cómo puedo practicar el autocuidado?"],
+        "responses": ["Haz tiempo para descansar y dormir lo suficiente, el sueño es esencial para tu bienestar.", "Come alimentos saludables y asegúrate de mantener una dieta equilibrada.", "Haz ejercicio regularmente para mantener tu cuerpo y mente en forma.", "Practica actividades que te relajen y te hagan sentir bien, como leer, dibujar o tomar baños relajantes.", "Sé consciente de tus emociones y permítete sentir lo que sientes sin juzgarte.", "Establece límites claros en tus relaciones y aprende a decir 'no' cuando necesites tiempo para ti.", "Haz actividades que te llenen de energía y te hagan sentir bien contigo mismo.", "Recuerda que el autocuidado es una prioridad, cuidarte a ti mismo te permite cuidar a los demás de una mejor manera."],
+        "context": [""]
+      },
+      {
+        "tag": "manejo_ansiedad",
+        "patterns": ["Siento ansiedad", "Necesito calmar mi ansiedad", "¿Cómo puedo controlar la ansiedad?"],
+        "responses": ["Practica técnicas de respiración profunda para reducir la ansiedad.", "Realiza actividades relajantes como yoga o meditación.", "Identifica las situaciones que te generan ansiedad y busca formas de afrontarlas.", "Habla con alguien de confianza sobre tus sentimientos de ansiedad.", "Evita la cafeína y otros estimulantes que puedan aumentar la ansiedad.", "Enfócate en el presente y evita preocuparte demasiado por el futuro.", "Consulta con un profesional de la salud mental para obtener apoyo adicional en el manejo de la ansiedad.", "Recuerda que es normal sentir ansiedad en ciertas situaciones, pero también puedes aprender a manejarla."],
+        "context": [""]
+      },
+      {
+        "tag": "superacion_adversidades",
+        "patterns": ["Estoy pasando por una dificultad", "Necesito superar un desafío", "¿Cómo puedo superar una adversidad?"],
+        "responses": ["Afronta los desafíos uno a la vez, no te sientas abrumado por todo a la vez.", "Busca apoyo en amigos, familiares o grupos de apoyo que puedan ayudarte a atravesar la adversidad.", "Encuentra formas creativas de enfrentar los problemas, a veces una perspectiva nueva puede abrir nuevas soluciones.", "Aprende de las experiencias pasadas y utilízalas como aprendizaje para superar la adversidad actual.", "Establece metas realistas y alcanzables para seguir adelante.", "Recuerda que enfrentar dificultades puede fortalecerte y ayudarte a crecer.", "Permítete sentir tus emociones y busca formas saludables de expresarlas.", "La resiliencia es la capacidad de recuperarse de las dificultades, ¡confía en ti mismo!"],
+        "context": [""]
+      },
+      {
+        "tag": "mejorar_autoestima",
+        "patterns": ["Tengo baja autoestima", "Necesito mejorar mi confianza", "¿Cómo puedo aumentar mi autoestima?"],
+        "responses": ["Identifica tus logros y reconoce tus habilidades y talentos.", "Rodeate de personas que te apoyen y te valoren por quien eres.", "Deja de compararte con los demás, recuerda que cada persona es única y especial.", "Haz una lista de tus cualidades positivas y repásalas a diario.", "Cambia los pensamientos negativos por afirmaciones positivas sobre ti mismo.", "No te critiques duramente, sé compasivo contigo mismo y trata de aceptarte tal como eres.", "Establece límites saludables en tus relaciones y no permitas que otros te menosprecien.", "Haz cosas que te hagan sentir bien contigo mismo y te den confianza."],
+        "context": [""]
+      },
+      {
+        "tag": "autoexpresion",
+        "patterns": ["Siento que no puedo expresarme", "Quiero ser más abierto sobre mis sentimientos", "¿Cómo puedo mejorar mi autoexpresión?"],
+        "responses": ["Practica la comunicación asertiva, expresando tus pensamientos y sentimientos de manera clara y respetuosa.", "Encuentra actividades creativas como escribir, pintar o bailar para expresar tus emociones.", "Habla con amigos cercanos o seres queridos sobre lo que sientes, compartir tus sentimientos puede ser liberador.", "Escribe un diario para reflexionar sobre tus pensamientos y emociones.", "No te reprimas, permite que tus emociones fluyan y busca formas saludables de expresarlas.", "Recuerda que cada persona tiene su propia forma de expresarse, no te compares con los demás.", "Encuentra un entorno seguro y de apoyo donde te sientas cómodo expresándote abiertamente.", "No temas pedir ayuda si sientes que necesitas apoyo para mejorar tu autoexpresión."],
+        "context": [""]
+      },
+      {
+        "tag": "autoaprecio",
+        "patterns": ["No me siento valorado", "Siento que no soy importante", "¿Cómo puedo aprender a valorarme más?"],
+        "responses": ["Reconoce tus logros y celebralos, por pequeños que sean.", "Recuerda que eres valioso y mereces amor y respeto, incluyendo el amor propio.", "Trata de no depender del juicio de los demás para sentirte valorado, busca valorarte por ti mismo.", "Haz una lista de las cosas que te gustan de ti mismo y enfócate en esas cualidades.", "Rodéate de personas que te aprecien y te hagan sentir valorado.", "Cuida de ti mismo y de tus necesidades, permítete darte el cariño que mereces.", "Practica la autocompasión, aceptando tus imperfecciones y tratándote con amabilidad.", "Aprende a decir 'no' cuando sientas que estás siendo subvalorado o explotado."],
+        "context": [""]
+      },
+      {
+        "tag": "motivacion_diaria",
+        "patterns": ["Necesito motivación para el día", "Dime algo inspirador", "Frases motivadoras"],
+        "responses": ["Hoy es un nuevo día lleno de oportunidades, ¡aprovéchalas al máximo!", "Cada día es una página en blanco, tú decides cómo llenarla de experiencias positivas.", "Confía en ti mismo y en tus capacidades, tienes el poder de lograr tus metas.", "No importa cuántas veces te caigas, lo importante es levantarse y seguir adelante.", "Aprecia cada pequeño avance y logro, cada paso cuenta en tu camino al éxito.", "La clave del éxito está en perseverar y nunca perder la esperanza.", "Eres más fuerte de lo que crees, enfrenta el día con valentía y determinación.", "Recuerda que la felicidad está en disfrutar el presente, no en preocuparse por el pasado o el futuro."],
+        "context": [""]
+      },
+      {
+        "tag": "relaciones_saludables",
+        "patterns": ["Tengo problemas en mis relaciones", "Quiero mejorar mis relaciones interpersonales", "¿Cómo puedo tener relaciones más saludables?"],
+        "responses": ["Escucha activamente a los demás, muestra interés genuino por lo que tienen que decir.", "Comunica tus necesidades y sentimientos de manera clara y respetuosa.", "Aprende a poner límites en tus relaciones y no permitas comportamientos tóxicos.", "Resuelve conflictos de manera constructiva, buscando soluciones en lugar de culpar.", "Aprecia a las personas que te rodean y muestra gratitud por su presencia en tu vida.", "Cultiva la empatía, trata de ponerte en el lugar de los demás y comprender sus perspectivas.", "Recuerda que cada relación requiere tiempo y esfuerzo, pero vale la pena cuando es saludable y significativa.", "Si enfrentas dificultades en una relación, considera buscar el apoyo de un mediador o terapeuta para ayudar a mejorar la comunicación."],
+        "context": [""]
+      },
+      {
+        "tag": "manejo_emociones_negativas",
+        "patterns": ["Me siento abrumado por emociones negativas", "Necesito controlar mi ira", "¿Cómo puedo manejar mis emociones negativas?"],
+        "responses": ["Identifica las emociones que estás experimentando y acepta que son válidas y naturales.", "Practica la autorregulación emocional, toma un momento para respirar y calmarte antes de reaccionar.", "Encuentra actividades que te ayuden a liberar la tensión emocional, como hacer ejercicio o escribir en un diario.", "Habla con alguien en quien confíes sobre lo que estás sintiendo, compartir tus emociones puede aliviar la carga.", "Busca formas saludables de expresar tus emociones, como hablar de ellas o canalizarlas en actividades creativas.", "Aprende a perdonar a los demás y a ti mismo, el perdón puede liberar emociones negativas.", "Practica la gratitud, enfocándote en las cosas positivas en tu vida en lugar de centrarte en lo negativo.", "Si sientes que estás luchando para manejar tus emociones, considera buscar el apoyo de un profesional de la salud mental."],
+        "context": [""]
+      },
+      {
+        "tag": "autocompasión",
+        "patterns": ["Soy muy autocrítico", "Me cuesta perdonarme a mí mismo", "¿Cómo puedo ser más compasivo conmigo mismo?"],
+        "responses": ["Trátate a ti mismo con la misma amabilidad y compasión que tratarías a un amigo cercano.", "Acepta que todos cometemos errores y que es parte de ser humano, no te juzgues duramente por ellos.", "Habla contigo mismo de manera positiva y alentadora, refuerza tu valía y autoestima.", "Practica la autocompasión en momentos de dificultades, no te culpes por sentirte mal, es normal y está bien pedir ayuda.", "Date permiso para descansar y cuidarte cuando te sientas agotado o sobrecargado.", "Recuerda que necesitas cuidarte a ti mismo antes de poder cuidar a los demás de manera efectiva.", "Haz una lista de tus cualidades y logros, reconoce que eres valioso tal como eres.", "Si te encuentras luchando con la autocompasión, considera buscar recursos o terapia que te ayuden a desarrollarla."],
+        "context": [""]
+      },
+      {
+        "tag": "gratitud",
+        "patterns": ["Necesito enfocarme en lo positivo", "Quiero cultivar la gratitud en mi vida", "¿Cómo puedo ser más agradecido?"],
+        "responses": ["Lleva un diario de gratitud, anotando cosas por las que te sientes agradecido cada día.", "Toma un momento por la mañana o antes de dormir para reflexionar sobre las cosas positivas en tu vida.", "Expresa tu gratitud a las personas que te apoyan y te hacen sentir bien.", "Encuentra belleza en las pequeñas cosas, como el sol brillante o una sonrisa amable.", "Recuerda que la gratitud es una elección, enfócate en lo que tienes en lugar de lo que te falta.", "Haz un esfuerzo por ver los aspectos positivos en situaciones difíciles, incluso en los desafíos hay lecciones y oportunidades para crecer.", "Agradece tus habilidades y talentos, reconociendo que tienes mucho que ofrecer al mundo.", "Practica el acto de dar, ya sea a través de donaciones o brindando tu tiempo y apoyo a otros, la generosidad también cultiva la gratitud."],
+        "context": [""]
+      }
 ]}
